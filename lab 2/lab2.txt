@@ -1,0 +1,84 @@
+
+
+**Date / Auteur**
+04/03/2026 / [HMICH mohammed-amine]
+
+**Support (AVD / device labo)**
+AVD – Pixel 6 (émulateur Android)
+
+**Version Android / API**
+Android 15 / API level 36
+
+**App + version**
+myApplication "2:48" – version 1.0
+
+**3 scénarios**
+1.  **Scénario nominal** : Saisie d'un nom et d'un prénom valides, puis envoi du formulaire.
+2.  **Scénario de champ vide** : Tentative d'envoi du formulaire sans avoir saisi le prénom.
+3.  **Scénario de validation** : Saisie de caractères spéciaux ou chiffres dans les champs "Nom" et "Prénom".
+
+**Observations factuelles**
+1.  Après avoir saisi "Dupont" dans le champ "Nom" et "Jean" dans le champ "Prénom", l'appui sur le bouton "Envoyer" ne produit aucun retour visuel ou message de confirmation. On ne sait pas si les données ont été envoyées ou traitées.
+2.  Lorsqu'on tente d'envoyer le formulaire avec le champ "Prénom" vide, l'application ne bloque pas l'envoi et ne signale pas l'erreur à l'utilisateur. Le bouton est cliquable et aucun message d'erreur ne s'affiche.
+3.  En saisissant "Dupont123" dans le champ "Nom", l'application accepte la saisie sans la filtrer. On ne sait pas si le backend attend un format spécifique (uniquement des lettres).
+
+**Limites**
+- Émulateur limité à 4 cœurs CPU et 2 Go RAM
+- Google Play Services non disponible
+- Matériel simulé (accéléromètre, caméra, GPS, etc.) – comportement potentiellement différent d'un appareil physique
+- Pas de carte SD physique
+
+**Reset effectué (Oui/Non) + preuve**
+Oui – L'AVD a été remis à son état initial ("wipe data") avant l'exécution des tests.
+(Preuve : [Capture d'écran du démarrage de l'AVD avec l'écran d'accueil vierge])
+
+**Propriétés AVD**
+avd.ini.displayname              Pixel 6
+avd.ini.encoding                 UTF-8
+AvdId                            Pixel_6
+disk.dataPartition.size          6G
+fastboot.chosenSnapshotFile      
+fastboot.forceChosenSnapshotBoot no
+fastboot.forceColdBoot           no
+fastboot.forceFastBoot           yes
+hw.accelerometer                 yes
+hw.arc                           false
+hw.audioInput                    yes
+hw.battery                       yes
+hw.camera.back                   virtualscene
+hw.camera.front                  emulated
+hw.cpu.ncore                     4
+hw.device.hash2                  MD5:2016577e1656e8e7c2adb0fac972beea
+hw.device.manufacturer           Google
+hw.device.name                   pixel_6
+hw.dPad                          no
+hw.gps                           yes
+hw.gpu.enabled                   yes
+hw.gpu.mode                      auto
+hw.gyroscope                     yes
+hw.initialOrientation            portrait
+hw.keyboard                      yes
+hw.lcd.density                   420
+hw.lcd.height                    2400
+hw.lcd.width                     1080
+hw.mainKeys                      no
+hw.ramSize                       2048
+hw.sdCard                        yes
+hw.sensors.light                 yes
+hw.sensors.magnetic_field        yes
+hw.sensors.orientation           yes
+hw.sensors.pressure              yes
+hw.sensors.proximity             yes
+hw.trackBall                     no
+image.sysdir.1                   system-images\android-36\google_apis\x86_64\
+PlayStore.enabled                false
+runtime.network.latency          none
+runtime.network.speed            full
+showDeviceFrame                  yes
+skin.dynamic                     yes
+tag.display                      Google APIs
+tag.displaynames                 Google APIs
+tag.id                           google_apis
+tag.ids                          google_apis
+target                           android-36
+vm.heapSize                      228
